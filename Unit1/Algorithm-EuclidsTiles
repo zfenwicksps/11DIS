@@ -1,0 +1,47 @@
+Draw canvas size 345 wide x 150 long	floorWidth	floorLength
+
+Calculate square size - use Euclid's algorithm	Function - calculateTile
+Calculate how many squares fit across the canvas	numberOfTilesX
+Calculate how many squares fit down the canvas	numberOfTilesY
+Draw squares across 	While tilesX < numberOfTilesX
+	a. Find starting x
+	b. Find starting y
+	c. Draw square
+	d. Colour square
+	e. Move across x axis width of square
+Move down y axis width of square	While tilesY < numberOfTilesY
+
+
+DECLARE floorWidth
+DECLARE floorLength
+DECLARE numberOfTilesX
+DECLARE numberOfTilesY
+DECLARE startingPos
+DECLARE tilesX
+DECLARE tilesY
+DISPLAY canvas (floorWidth, floorLength)
+FUNCTION euclids(a,b)
+	CALCULATE size of square
+	WHILE c does not equal 0
+		c= a% b
+		a= b
+		b= c
+	Return b as squareSize
+END FUNCTION
+FUNCTION square
+	DRAW a square
+END FUNCTION
+CALCULATE numberOfTilesX = floorWidth/squareSize
+CALCULATE numberOfTilesY = floorLength/squareSize
+WHILE tilesY < numberOfTilesY
+	WHILE tilesX < numberOfTilesX
+		CALL square
+		xPos = xPos + squareSize
+		tilesX = tilesX + 1
+	yPos = yPos + squareSize
+	tilesY = tilesY + 1
+
+
+
+
+
