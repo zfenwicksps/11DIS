@@ -1,0 +1,32 @@
+
+<header>
+    <nav>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="{{ url_for('index') }}"  class="nav-link {% if index %} active {% endif %}">Home</a></li>
+
+            <li class="nav-item"><a href="{{ url_for('bookDJ') }}"  class="nav-link {% if bookDJ %} active {% endif %}">Book A DJ</a></li>
+
+            <li class="nav-item"><a href="{{ url_for('queue') }}"  class="nav-link {% if queue %} active {% endif %}">Queue</a></li>
+
+
+            <li class="nav-item"><a href="{{ url_for('friends') }}"  class="nav-link {% if friends %} active {% endif %}">Friends</a></li>
+
+
+
+
+            {% if not session['username'] %}
+            <li class="nav-item"><a href="{{ url_for('register') }}"  class="nav-link {% if register %} active {% endif %}">Register</a></li>
+
+            <li class="nav-item"><a href="{{ url_for('login') }}"  class="nav-link {% if login %} active {% endif %}">Login</a></li>
+
+            {% else %}
+            <li class="nav-item"><a href="{{ url_for('logout') }}"  class="nav-link">Logout</a></li>
+            {% endif %}
+
+
+
+
+        </ul>
+    </nav>
+    <hr style="clear:both">
+</header>

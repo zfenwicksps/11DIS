@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Book a DJ</h2>
+{% for message in get_flashed_messages() %}
+<h6 class="alert alert-danger">{{ message }}</h6>
+{% endfor %}
+<form method="post">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="rave" value="rave" name="rave">
+        <label class="form-check-label" for="rave">Rave</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="club" value="club" name="club">
+        <label class="form-check-label" for="club">Club</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="wedding" value="wedding" name="wedding">
+        <label class="form-check-label" for="wedding">Wedding</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="formal" value="formal" name="formal">
+        <label class="form-check-label" for="formal">Formal</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="party" value="party" name="party">
+        <label class="form-check-label" for="party">Party</label>
+    </div>
+
+
+
+    <div>
+        <label class="form-check-label" for="start">Start Time</label>
+        <input class="form-check" type="time" id="start"
+           name="start" value="T19:30"
+           min="T00:00" max="T24:00">
+    </div>
+    <div>
+        <label class="form-check-label" for="start">End Time</label>
+        <input class="form-check" type="time" id="end"
+           name="end" value="T19:30"
+           min="T00:00" max="T24:00">
+    </div>
+    <div>
+        <label class="form-check-label" for="start">Event Date</label>
+        <input class="form-check" type="date" id="date"
+           name="date" value="2013-05-01"
+           min="2023-05-01" max="2024-05-01">
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <input type="text" class="form-control" id="address" name="address" required>
+    </div>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">Book Event</button>
+</form>
+
+{% endblock %}

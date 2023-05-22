@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Calculator</h1>
+<h2>Welcome to Calculator 1.0</h2>
+
+    <div class="container">
+        <form action="" method="post" novalidate>
+            <fieldset class="form-group">
+                <legend>{{ title }}</legend>
+                {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.num1.label }} <br>
+                        {{ form.num1 }}
+                        {% for error in form.num1.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+                    <p> {{ form.num2.label }} <br>
+                        {{ form.num2 }}
+                        {% for error in form.num2.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        <!--<input type="submit" name="submit-button" value="add">-->
+                        <!--<input name="add" type="submit" value="+">-->
+                        {{ form.add() }}
+                        {{ form.subtract() }}
+                        {{ form.multiply() }}
+                        {{ form.divide() }}
+                        {{ form.reset() }}
+                    </p>
+
+                    {# if session['answer'] #}
+                    <span>Answer = {{ session['answer'] }}</span>
+                    {# endif #}
+
+
+
+
+
+            </fieldset>
+        </form>
+    </div>
+
+
+
+
+</div>
+{% endblock %}

@@ -28,9 +28,11 @@ FUNCTION euclids(a,b)
 		b= c
 	Return b as squareSize
 END FUNCTION
-FUNCTION square
+
+FUNCTION square(squareSize)
 	DRAW a square
 END FUNCTION
+CALL euclids(floorWidth, floorLength)
 CALCULATE numberOfTilesX = floorWidth/squareSize
 CALCULATE numberOfTilesY = floorLength/squareSize
 WHILE tilesY < numberOfTilesY
@@ -38,8 +40,10 @@ WHILE tilesY < numberOfTilesY
 		CALL square
 		xPos = xPos + squareSize
 		tilesX = tilesX + 1
+	END WHILE
 	yPos = yPos + squareSize
 	tilesY = tilesY + 1
+END WHILE
 
 
 

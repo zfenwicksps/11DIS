@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Scoreboard</h1>
+<h2>AFL Scoreboard</h2>
+
+    <div class="container">
+        <form name="login" action="" method="post" novalidate>
+            <fieldset class="form-group">
+                <legend>{{ team1 }}</legend>
+                {{ form.hidden_tag() }}
+
+                    <p>
+                        {{ form.goal1() }}
+                        {{ form.behind1() }}
+                        {{ form.reset1() }}
+                    </p>
+
+                    <p>
+                        {{ team1 }} = {{ session['score'] }}
+                    </p>
+                <legend>{{ team2 }}</legend>
+                {{ form.hidden_tag() }}
+
+                    <p>
+                        {{ form.goal2() }}
+                        {{ form.behind2() }}
+                        {{ form.reset2() }}
+                    </p>
+
+                    <p>
+                        {{ team2 }} = {{ session['tally'] }}
+                    </p>
+
+
+
+
+
+
+
+            </fieldset>
+        </form>
+    </div>
+
+
+
+
+</div>
+{% endblock %}

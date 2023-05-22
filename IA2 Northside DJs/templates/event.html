@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in get_flashed_messages() %}
+    <h6 class="alert alert-danger">{{ message }}</h6>
+{% endfor %}
+<form method="post">
+        <div class="form-group">
+            <h2><label>Artist Name:</label></h2>
+            <input type="text" id="artist" name="artist" required>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+{% endblock %}
+
+

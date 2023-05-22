@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+    {% block content %}
+
+    <div class="container">
+        <form name="login" action="" method="post" novalidate>
+            <fieldset class="form-group">
+                <legend>{{ title }}</legend>
+                {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.word.label }} <br>
+                        {{ form.word }}
+                        {% for error in form.word.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                            {{ form.submit() }}
+                    </p>
+                    {# if session['word'] #}
+                    <span>Answer = {{ session['word'] }}</span>
+                    {# endif #}
+                    <br>
+                    {# if session['my_dict'] #}
+                    <span>Answer = {{ session['my_dict'] }}</span>
+                    <br>
+
+                    {% for key, val in my_dict.items() %}
+                    <tr>
+                        <td>Letter: {{ key.upper() }} Count: {{ val }}</td>
+                        <br>
+                    </tr>
+                    {% endfor %}
+
+                    <p>There are {{ session['lenword'] }} total letters in the word {{word}}.
+                        <br>
+                    There are {{ session['lendict'] }} unique letters in the word {{word}}.
+                    </p>
+                    {# endif #}
+            </fieldset>
+        </form>
+    </div>
+    {% endblock %}

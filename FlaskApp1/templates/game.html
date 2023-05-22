@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Paper Scissors Rock Lizard Spock</h1>
+    <form method="post" action="{{ url_for('game_result') }}" id="game_form">
+
+        <hr/>
+        <h3>Choose your turn:</h3>
+
+
+        <img src="{{ url_for('static',filename='images/paper.png') }}">
+        <input type="submit" name="turn" value="paper" src="{{ url_for('static',filename='images/paper.png') }}" alt="paper"/>
+        <img src="{{ url_for('static',filename='images/scissors.png') }}">
+        <input type="submit" name="turn" value="scissors" src="{{ url_for('static',filename='images/scissors.png') }}" alt="scissors"/>
+        <img src="{{ url_for('static',filename='images/rock.png') }}">
+        <input type="submit" name="turn" value="rock" src="{{ url_for('static',filename='images/rock.png') }}" alt="rock"/>
+        <img src="{{ url_for('static',filename='images/lizard.png') }}">
+        <input type="submit" name="turn" value="lizard" src="{{ url_for('static',filename='images/lizard.png') }}" alt="lizard"/>
+        <img src="{{ url_for('static',filename='images/spock.png') }}">
+        <input type="submit" name="turn" value="spock" src="{{ url_for('static',filename='images/spock.png') }}" alt="spock"/>
+        <input type="submit" name="turn" value="reset" alt="reset"/>
+    </form>
+        <h3>Result</h3>
+        <p>Player: {{ session['uturn'] }} {{ session['result'] }} Computer: {{ session['cturn'] }}</p>
+        <h3>Score</h3>
+        <p>Player: {{ session['user'] }} Computer: {{ session['cpu'] }}</p>
+
+{% endblock %}
+

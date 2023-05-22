@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in get_flashed_messages() %}
+    <h6 class="alert alert-danger">{{ message }}</h6>
+{% endfor %}
+<form method="post">
+        <div class="form-group">
+            <h2><label>Enter EVENT Code</label></h2>
+            <input type="text" class="form-control" id="code" name="code" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+{% endblock %}

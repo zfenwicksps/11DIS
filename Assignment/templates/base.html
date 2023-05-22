@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"/>
+    <container>
+        <h1>St Paul's School</h1>
+        {% if session['username'] %}
+        <span class="user">Welcome, {{ session['username'].rstrip('@stpauls.qld.edu.au') }}</span>
+        {% endif %}
+    </container>
+</head>
+<div class="container">
+    {% include "includes/nav.html" %}
+</div>
+<body>
+{% block content %}
+{% endblock %}
+{% include "includes/footer.html" %}
+</body>
+</html>

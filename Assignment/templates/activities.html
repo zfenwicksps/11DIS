@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Upcoming Activities {% endblock %}</h1>
+    <br>
+    <br>
+    <div class="row w-75">
+        <div class="col">
+            {% for q in query %}
+                <div class="q text-center">
+                    <div id="parent">
+                        <div class="child"><h3>{{ q['name'] }}</h3></div>
+                        <div class="child"><h6>Points: +{{ q['points'] }}</h6></div>
+
+                    </div>
+                    <br>
+                    <div class=".lrmargin">{{ q['description'] }}</div>
+                </div>
+                <form method="post">
+                    <label>Date attended</label>
+                    <select class="form-group" id="date" name="date" required>
+                        {% for attend in attendance %}
+                            {% if attend['name'] == q['name'] %}
+                                <option value="{{ attend['time'] }} {{ attend['date'] }}">{{ attend['time'] }} {{ attend['date'] }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    {% if session['role'] == 'student' %}
+                        <button type="submit" name="submit" value="{{ q['name'] }}" class="btn btn-primary">Attended</button>
+                    {% endif %}
+                </form>
+            {% endfor %}
+        </div>
+    </div>
+<br>
+<br>
+{% if session['role'] == 'tutors' or session['role'] == 'houseleader' %}
+
+    <a href="http://127.0.0.1:5000/create">New Event</a>
+    <a href="http://127.0.0.1:5000/date">New Activity Date</a>
+
+{% endif %}
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Add a New Event{% endblock %}</h1>
+
+    <form method="post">
+        <div>
+            <label for="name">Name</label>
+            <br>
+            <select class="form-group" id="name" name="name" required>
+                {% for name in names %}
+
+                <option name="{{ name['name'] }}">{{ name['name'] }}</option>
+
+                {% endfor %}
+            </select>
+        </div>
+        <label for="date">Date</label>
+
+        <input type="date" id="date" name="date"
+               value="2022-10-22"
+               min="2022-10-22" max="2024-12-31" />
+
+
+        <label for="time">Time </label>
+        <input id="time" type="time" name="time" />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

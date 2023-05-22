@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html
+{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    position: relative;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    position: relative;
+    margin:2%;
+}
+
+header {
+    text-align: center;
+}
+
+
+#checkbox {
+  display: none;
+}
+.toggle {
+  height: 80px;
+  width: 200px;
+  border-radius: 9999px;
+  background-image: url(https://seekicon.com/free-icon-download/sort-a-z_1.svg);
+  background-size: fit;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 6px 6px 10px #0000003d;
+}
+
+#checkbox:checked + .toggle {
+  background-image: url(https://seekicon.com/free-icon-download/sort-z-a_1.svg);
+  background-size: fit;
+}
+
+.toggle::before {
+  content: "";
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  left: 0;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  transition: all 0.5s ease-in-out;
+}
+
+#checkbox:checked + .toggle::before {
+  position: absolute;
+  left: calc(100% - 80px);
+}

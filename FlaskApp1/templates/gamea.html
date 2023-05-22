@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Game</h1>
+<h2>Paper Scissors Rock Lizard Spock</h2>
+
+    <div class="container">
+        <form name="login" action="" method="post" novalidate>
+            <fieldset class="form-group">
+                <legend>{{ team1 }}</legend>
+                {{ form.hidden_tag() }}
+
+                    <p>
+                        <p>
+                            {{ form.paper() }}
+                            <img src="{{ url_for('static',filename='images/sps-logo-200.png') }}">
+            </p>
+
+                        {{ form.scissors() }}
+                        {{ form.rock() }}
+                        {{ form.lizard() }}
+                        {{ form.spock() }}
+                        {{ form.reset() }}
+                        {{ session['user'] }}
+                        {{ session['cpu'] }}
+                    </p>
+
+
+
+
+
+
+
+
+            </fieldset>
+        </form>
+    </div>
+
+
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} St Paul's School {% endblock %}</h1>
+    <form action="http://127.0.0.1:5000/register" method="post">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" id="fname" name="fname" required>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" id="lname" name="lname" required>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="text" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label>Date of Birth (yyyy-mm-dd)</label>
+            <input type="text" class="form-control" id="DOB" name="DOB" required>
+        </div>
+
+
+
+
+        <div>
+            <label for="gender">Gender</label>
+            <br>
+            <select class="form-group" id="gender" name="gender" required>
+
+                <option name="Male" disabled>Select Option</option>
+                <option name="Male">Male</option>
+                <option name="Female">Female</option>
+
+            </select>
+        </div>
+
+
+
+
+
+        <div>
+            <label for="house">House</label>
+            <br>
+            <select class="form-group" id="house" name="house" required>
+
+                <option name="Male" disabled>Select Option</option>
+                <option name="gladius">Gladius</option>
+                <option name="mitre">Mitre</option>
+                <option name="taja">Taja</option>
+                <option name="scudo">Scudo</option>
+                <option name="boek">Boek</option>
+            </select>
+        </div>
+
+
+
+
+
+        <div>
+            <label for="tutor_id">Tutor Group</label>
+            <br>
+            <select class="form-group" id="tutor_id" name="tutor_id" required>
+
+                <option name="Male" disabled>Select Option</option>
+                <option name="01">01</option>
+                <option name="02">02</option>
+                <option name="03">03</option>
+                <option name="04">04</option>
+                <option name="05">05</option>
+                <option name="06">06</option>
+                <option name="07">07</option>
+                <option name="08">08</option>
+                <option name="09">09</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Role</label>
+            <br>
+            <select class="form-group" id="role" name="role" required>
+
+                <option name="Male" disabled>Select Option</option>
+                <option value="student">Student</option>
+                <option value="tutor">Tutor</option>
+                <option value="house">House Leader</option>
+
+            </select>
+        </div>
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Queue {% endblock %}</h1>
+    {% for message in get_flashed_messages() %}
+    <h6 class="alert alert-danger">{{ message }}</h6>
+    {% endfor %}
+    <form method="post">
+        <div class="form-group">
+
+            <button type="submit" class="btn btn-primary" id="a-z" name="order" value="a-z">a-z</button>
+            <button type="submit" class="btn btn-primary" id="z-a" name="order" value="z-a">z-a</button>
+            <button type="submit" class="btn btn-primary" id="hvotes" name="order" value="hvotes">hvotes</button>
+            <button type="submit" class="btn btn-primary" id="lvotes" name="order" value="lvotes">lvotes</button>
+        </div>
+
+
+    </form>
+    {% for q in queue %}
+        <tr>
+          <td>{{ q }}</td>
+            <br>
+        </tr>
+    {% endfor %}
+
+
+{% endblock %}
